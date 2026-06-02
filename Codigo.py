@@ -26,9 +26,9 @@ while True:
             if not os.path.exists(caminho_salvar):
                 os.makedirs(caminho_salvar)
 
-            # Configurações do yt-dlp para baixar a melhor qualidade disponível
+            # Configurações do yt-dlp para baixar um formato único (evita precisar do ffmpeg)
             ydl_opts = {
-                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+                'format': 'best[ext=mp4]/best',
                 'outtmpl': os.path.join(caminho_salvar, '%(title)s.%(ext)s'),
                 'quiet': True,
                 'no_warnings': True,
